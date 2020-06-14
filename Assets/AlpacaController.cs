@@ -8,15 +8,18 @@ public class AlpacaController : MonoBehaviour
     Rigidbody2D rig;
     public float force = 1000.0f;
     Vector2 startPos;
+    public float speed=1.0f;
+    Animator animator;
     void Start()
     {
         this.rig = GetComponent<Rigidbody2D>();
+        this.animator = GetComponent<Animator>();
     }
 
     // Update is called once per frame
     void Update()
     {
-
+        this.animator.speed = speed;
         if (Input.GetMouseButtonDown(0))
         {
             this.startPos = Input.mousePosition;
@@ -41,7 +44,7 @@ public class AlpacaController : MonoBehaviour
                     Debug.Log("LEFT");
                     break;
             }
-        }
+        }//input
 
 
     }
