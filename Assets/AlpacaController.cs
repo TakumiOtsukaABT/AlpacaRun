@@ -14,6 +14,7 @@ public class AlpacaController : MonoBehaviour
     {
         this.rig = GetComponent<Rigidbody2D>();
         this.animator = GetComponent<Animator>();
+        this.animator.SetBool("Ground", true);
     }
 
     // Update is called once per frame
@@ -45,7 +46,14 @@ public class AlpacaController : MonoBehaviour
                     break;
             }
         }//input
-
+        if (rig.velocity.y != 0)
+        {
+            this.animator.SetBool("Ground", false);
+        }
+        else
+        {
+            this.animator.SetBool("Ground", true);
+        }
 
     }
     enum Direction
