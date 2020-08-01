@@ -302,6 +302,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   scrollSpeed: -5
   startPos: {x: 0, y: 0}
+  speedTimes: 4.3
 --- !u!61 &1001852486
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -446,6 +447,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   force: 1000
+  speed: 1
 --- !u!61 &1087970029
 BoxCollider2D:
   m_ObjectHideFlags: 0
