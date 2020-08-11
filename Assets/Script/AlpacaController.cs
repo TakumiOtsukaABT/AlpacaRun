@@ -82,11 +82,13 @@ public class AlpacaController : MonoBehaviour
                 break;
             case 2://tackle
                 seconds += Time.deltaTime;
-                tackle();
-                if (seconds > tackleTime)
+                if (seconds < tackleTime)
                 {
-                    state = 0;
-                    seconds = 0;
+                    tackle();
+                }
+                else if (seconds > tackleTime)
+                {
+                    tackleOnFinished();
                 }
                 break;
 
@@ -146,6 +148,16 @@ public class AlpacaController : MonoBehaviour
     private void tackle()
     {
         Debug.Log("tackle");
+        speed = Mathf.MoveTowards(speed, 3.0f, 0.5f);
+    }
+    private void tackleOnFinished()
+    {
+        Debug.Log("tacklefin");
+        speed = 1.0f;
+        {
+            state = 0;
+            seconds = 0;
+        }
     }
 
 

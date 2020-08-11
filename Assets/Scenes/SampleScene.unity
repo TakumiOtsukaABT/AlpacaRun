@@ -196,8 +196,8 @@ CapsuleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 1.06, y: -0.4}
-  m_Size: {x: 1.48, y: 4.38}
+  m_Offset: {x: 1.06, y: -0.3}
+  m_Size: {x: 1.48, y: 4.5}
   m_Direction: 0
 --- !u!50 &423273189
 Rigidbody2D:
@@ -247,6 +247,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   force: 1000
   speed: 1
+  tackleTime: 0.5
+  duckTime: 0.5
 --- !u!95 &423273192
 Animator:
   serializedVersion: 3
