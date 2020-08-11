@@ -10,7 +10,7 @@ public class Background1 : MonoBehaviour
     public float speedTimes = 3.9f;
     float newPos;
     /*scroll to alpaca no speed chousei*/
-    public float speedAdjust = 5.0f;
+    public float speedAdjust = 13.0f;
     GameObject alpaca;
     // Start is called before the first frame update
     void Start()
