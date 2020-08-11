@@ -148,7 +148,7 @@ public class AlpacaController : MonoBehaviour
     private void tackle()
     {
         Debug.Log("tackle");
-        speed = Mathf.MoveTowards(speed, 3.0f, 0.5f);
+        speed = Mathf.MoveTowards(speed, 5.0f, 0.5f);
     }
     private void tackleOnFinished()
     {
