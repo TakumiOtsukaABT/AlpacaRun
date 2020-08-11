@@ -4,23 +4,28 @@ using UnityEngine;
 
 public class Background1 : MonoBehaviour
 {
-    public float scrollSpeed;
+    private float scrollSpeed;
     public Vector2 startPos;
     const float imageBound = 22.455f;
     public float speedTimes = 3.9f;
+    float newPos;
+    /*scroll to alpaca no speed chousei*/
+    public float speedAdjust = 13.0f;
     GameObject alpaca;
     // Start is called before the first frame update
     void Start()
     {
         startPos = transform.position;
         alpaca = GameObject.Find("Alpaca1200");
+        newPos = Mathf.Repeat(-speedTimes, imageBound);
+
     }
 
     // Update is called once per frame
     void Update()
     {
-        scrollSpeed = -alpaca.GetComponent<AlpacaController>().speed*speedTimes;
-        float newPos = Mathf.Repeat(Time.time * scrollSpeed, imageBound);
+        scrollSpeed = -alpaca.GetComponent<AlpacaController>().speed/ speedAdjust;
+        newPos = Mathf.Repeat(newPos + scrollSpeed, imageBound);
         transform.position = startPos + Vector2.right * newPos;
     }
 }

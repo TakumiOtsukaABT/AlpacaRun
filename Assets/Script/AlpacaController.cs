@@ -9,6 +9,10 @@ public class AlpacaController : MonoBehaviour
     public float force = 1000.0f;
     Vector2 startPos;
     public float speed=1.0f;
+    public float tackleTime = 2.0f, duckTime = 2.0f;
+    int state = 0;
+    float seconds = 0;
+
     Animator animator;
     void Start()
     {
@@ -37,23 +41,84 @@ public class AlpacaController : MonoBehaviour
                     break;
                 case Direction.DOWN:
                     Debug.Log("DOWN");
+                    if (state == 0)
+                    {
+                        state = 1;
+                    }
                     break;
                 case Direction.RIGHT:
                     Debug.Log("RIGHT");
+                    if (state == 0)
+                    {
+                        state = 2;
+                    }
                     break;
                 case Direction.LEFT:
                     Debug.Log("LEFT");
                     break;
             }
         }//input
-        if (rig.velocity.y != 0)
+
+        switch (state)
         {
-            this.animator.SetBool("Ground", false);
+            case 0://walk or jump
+                if (rig.velocity.y != 0)
+                {
+                    this.animator.SetBool("Ground", false);
+                }
+                else
+                {
+                    this.animator.SetBool("Ground", true);
+                }
+                break;
+            case 1://duck
+                seconds += Time.deltaTime;
+                duck();
+                if (seconds > duckTime)
+                {
+                    state = 0;
+                    seconds = 0;
+                }
+                break;
+            case 2://tackle
+                seconds += Time.deltaTime;
+                if (seconds < tackleTime)
+                {
+                    tackle();
+                }
+                else if (seconds > tackleTime)
+                {
+                    tackleOnFinished();
+                }
+                break;
+
         }
-        else
-        {
-            this.animator.SetBool("Ground", true);
-        }
+        this.animator.SetInteger("State", state);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
     }
     enum Direction
@@ -72,6 +137,26 @@ public class AlpacaController : MonoBehaviour
         }
         else {
             return (vector2.x > 0) ? Direction.RIGHT : Direction.LEFT;
+        }
+    }
+
+    private void duck()
+    {
+        Debug.Log("duck");
+    }
+
+    private void tackle()
+    {
+        Debug.Log("tackle");
+        speed = Mathf.MoveTowards(speed, 5.0f, 0.5f);
+    }
+    private void tackleOnFinished()
+    {
+        Debug.Log("tacklefin");
+        speed = 1.0f;
+        {
+            state = 0;
+            seconds = 0;
         }
     }
 

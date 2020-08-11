@@ -151,7 +151,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 423273185}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -6, y: 0.31, z: 10}
+  m_LocalPosition: {x: -4.78, y: -0.02, z: 10}
   m_LocalScale: {x: 0.7, y: 0.73991966, z: 0.73991966}
   m_Children: []
   m_Father: {fileID: 519420032}
@@ -196,8 +196,8 @@ CapsuleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 1.06, y: -0.4}
-  m_Size: {x: 1.48, y: 4.38}
+  m_Offset: {x: 1.06, y: -0.3}
+  m_Size: {x: 1.48, y: 4.5}
   m_Direction: 0
 --- !u!50 &423273189
 Rigidbody2D:
@@ -247,6 +247,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   force: 1000
   speed: 1
+  tackleTime: 0.5
+  duckTime: 0.5
 --- !u!95 &423273192
 Animator:
   serializedVersion: 3
@@ -495,9 +497,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 894f68cb568d5c440bd23e40dc46a3fc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  scrollSpeed: -5
   startPos: {x: 0, y: 0}
   speedTimes: 4.3
+  speedAdjust: 13
 --- !u!61 &1001852486
 BoxCollider2D:
   m_ObjectHideFlags: 0
