@@ -11,6 +11,7 @@ public class AlpacaController : MonoBehaviour
     Vector2 startPos;
     public float speed=1.0f;
     public float tackleTime = 2.0f, duckTime = 1.0f;
+    public ParticleSystem dustSlide;
     int state = 0;
     float seconds = 0;
 
@@ -26,6 +27,9 @@ public class AlpacaController : MonoBehaviour
     void Update()
     {
         this.animator.speed = speed;
+        if (Input.GetKey(KeyCode.Space)){
+            dustSlide.Play();
+        }
         if (Input.GetMouseButtonDown(0))
         {
             this.startPos = Input.mousePosition;
@@ -157,6 +161,10 @@ public class AlpacaController : MonoBehaviour
     private void duck()
     {
         Debug.Log("duck");
+        if (speed == 1.0f)
+        {
+            dustSlide.Play();
+        }
         speed = Mathf.MoveTowards(speed, 3.0f, 0.5f);
 
     }
