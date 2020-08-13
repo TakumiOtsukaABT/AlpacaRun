@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
@@ -9,7 +10,7 @@ public class AlpacaController : MonoBehaviour
     public float force = 1000.0f;
     Vector2 startPos;
     public float speed=1.0f;
-    public float tackleTime = 2.0f, duckTime = 2.0f;
+    public float tackleTime = 2.0f, duckTime = 1.0f;
     int state = 0;
     float seconds = 0;
 
@@ -73,11 +74,13 @@ public class AlpacaController : MonoBehaviour
                 break;
             case 1://duck
                 seconds += Time.deltaTime;
-                duck();
-                if (seconds > duckTime)
+                if (seconds < duckTime)
                 {
-                    state = 0;
-                    seconds = 0;
+                    duck();
+                }
+                else if (seconds > duckTime)
+                {
+                    duckOnFinished();
                 }
                 break;
             case 2://tackle
@@ -121,6 +124,17 @@ public class AlpacaController : MonoBehaviour
 
 
     }
+
+    private void duckOnFinished()
+    {
+        Debug.Log("duckfin");
+        speed = 1.0f;
+        {
+            state = 0;
+            seconds = 0;
+        }
+    }
+
     enum Direction
     {
         UP,
@@ -143,6 +157,8 @@ public class AlpacaController : MonoBehaviour
     private void duck()
     {
         Debug.Log("duck");
+        speed = Mathf.MoveTowards(speed, 3.0f, 0.5f);
+
     }
 
     private void tackle()
