@@ -46,7 +46,7 @@ public class AlpacaController : MonoBehaviour
                     break;
                 case Direction.DOWN:
                     Debug.Log("DOWN");
-                    if (state == 0)
+                    if (state == 0 && rig.velocity.y == 0)
                     {
                         state = 1;
                     }
