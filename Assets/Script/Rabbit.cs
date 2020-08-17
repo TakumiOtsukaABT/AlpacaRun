@@ -48,6 +48,10 @@ public class Rabbit : Enemy
             startCount = false;
             countDown = interval/10;
         }
+        if (rig.velocity.y != 0)
+        {
+            this.transform.Translate(-0.1f, 0, 0);
+        }
 
     }
 

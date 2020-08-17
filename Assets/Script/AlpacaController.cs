@@ -14,6 +14,7 @@ public class AlpacaController : MonoBehaviour
     public ParticleSystem dustSlide;
     int state = 0;
     float seconds = 0;
+    public GameObject shougeki;
 
     Animator animator;
     void Start()
@@ -52,6 +53,9 @@ public class AlpacaController : MonoBehaviour
                     Debug.Log("RIGHT");
                     if (state == 0)
                     {
+                        GameObject go = Instantiate(shougeki) as GameObject;
+                        go.transform.parent = this.transform;
+                        go.transform.localPosition = new Vector3(-1.0f, 0, 0);
                         state = 2;
                     }
                     break;
