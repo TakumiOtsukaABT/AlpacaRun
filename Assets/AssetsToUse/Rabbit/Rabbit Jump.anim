@@ -6,7 +6,7 @@ AnimationClip:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Dash
+  m_Name: Rabbit Jump
   serializedVersion: 6
   m_Legacy: 0
   m_Compressed: 0
@@ -20,7 +20,15 @@ AnimationClip:
   m_PPtrCurves:
   - curve:
     - time: 0
-      value: {fileID: 21300000, guid: 3be7ec644108e754e8ba303443730cef, type: 3}
+      value: {fileID: 21300000, guid: 30ecd8821cf195e4483a1c09aec8f971, type: 3}
+    - time: 0.28333333
+      value: {fileID: 21300000, guid: 9e9f358e6a300e74cae33f815e5a070c, type: 3}
+    - time: 0.51666665
+      value: {fileID: 21300000, guid: 73d2807515d6c294c980ee94dc3555f0, type: 3}
+    - time: 0.8
+      value: {fileID: 21300000, guid: b264ad9b6069cfc40a03e54b66f62d0b, type: 3}
+    - time: 1
+      value: {fileID: 21300000, guid: b264ad9b6069cfc40a03e54b66f62d0b, type: 3}
     attribute: m_Sprite
     path: 
     classID: 212
@@ -40,18 +48,22 @@ AnimationClip:
       customType: 23
       isPPtrCurve: 1
     pptrCurveMapping:
-    - {fileID: 21300000, guid: 3be7ec644108e754e8ba303443730cef, type: 3}
+    - {fileID: 21300000, guid: 30ecd8821cf195e4483a1c09aec8f971, type: 3}
+    - {fileID: 21300000, guid: 9e9f358e6a300e74cae33f815e5a070c, type: 3}
+    - {fileID: 21300000, guid: 73d2807515d6c294c980ee94dc3555f0, type: 3}
+    - {fileID: 21300000, guid: b264ad9b6069cfc40a03e54b66f62d0b, type: 3}
+    - {fileID: 21300000, guid: b264ad9b6069cfc40a03e54b66f62d0b, type: 3}
   m_AnimationClipSettings:
     serializedVersion: 2
     m_AdditiveReferencePoseClip: {fileID: 0}
     m_AdditiveReferencePoseTime: 0
     m_StartTime: 0
-    m_StopTime: 0.016666668
+    m_StopTime: 1.0166667
     m_OrientationOffsetY: 0
     m_Level: 0
     m_CycleOffset: 0
     m_HasAdditiveReferencePose: 0
-    m_LoopTime: 1
+    m_LoopTime: 0
     m_LoopBlend: 0
     m_LoopBlendOrientation: 0
     m_LoopBlendPositionY: 0

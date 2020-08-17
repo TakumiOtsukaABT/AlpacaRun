@@ -27,9 +27,6 @@ public class AlpacaController : MonoBehaviour
     void Update()
     {
         this.animator.speed = speed;
-        if (Input.GetKey(KeyCode.Space)){
-            dustSlide.Play();
-        }
         if (Input.GetMouseButtonDown(0))
         {
             this.startPos = Input.mousePosition;

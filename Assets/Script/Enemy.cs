@@ -10,7 +10,7 @@ public class Enemy : MonoBehaviour
     float alpacaSpeed, speedAdjust;
 
     // Start is called before the first frame update
-    void Start()
+    protected void Start()
     {
         background = GameObject.Find("dupli2");
         alpaca = GameObject.Find("Alpaca1200");

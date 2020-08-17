@@ -14,8 +14,5 @@ public class Capibala : Enemy
     //{
     //}
 
-    public override void individualMove()
-    {
-        scrollSpeed = 3.0f;
-    }
+
 }
