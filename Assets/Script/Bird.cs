@@ -4,15 +4,8 @@ using UnityEngine;
 
 public class Bird : Enemy
 {
-    // Start is called before the first frame update
-    void Start()
+    public override void individualMove()
     {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        transform.Translate(-0.15f, 0, 0);
     }
 }
