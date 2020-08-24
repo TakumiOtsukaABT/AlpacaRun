@@ -20,6 +20,10 @@ public class Enemy : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (Mathf.Approximately(Time.timeScale, 0f))
+        {
+            return;
+        }
         alpacaSpeed = alpaca.GetComponent<AlpacaController>().speed;
         scrollSpeed = -alpacaSpeed / speedAdjust;
         standardMove();

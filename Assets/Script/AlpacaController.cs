@@ -27,6 +27,10 @@ public class AlpacaController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (Mathf.Approximately(Time.timeScale, 0f))
+        {
+            return;
+        }
         this.animator.speed = speed;
         if (Input.GetMouseButtonDown(0))
         {

@@ -24,6 +24,10 @@ public class Background1 : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (Mathf.Approximately(Time.timeScale, 0f))
+        {
+            return;
+        }
         scrollSpeed = -alpaca.GetComponent<AlpacaController>().speed/ speedAdjust;
         newPos = Mathf.Repeat(newPos + scrollSpeed, imageBound);
         transform.position = startPos + Vector2.right * newPos;
