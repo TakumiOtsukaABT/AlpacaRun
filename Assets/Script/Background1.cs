@@ -28,7 +28,7 @@ public class Background1 : MonoBehaviour
         {
             return;
         }
-        scrollSpeed = -alpaca.GetComponent<AlpacaController>().speed/ speedAdjust;
+        scrollSpeed = -(alpaca.GetComponent<AlpacaController>().speed/ speedAdjust) * (Time.deltaTime * 60);
         newPos = Mathf.Repeat(newPos + scrollSpeed, imageBound);
         transform.position = startPos + Vector2.right * newPos;
     }

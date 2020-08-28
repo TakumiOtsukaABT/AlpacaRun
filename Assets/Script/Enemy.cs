@@ -41,7 +41,7 @@ public class Enemy : MonoBehaviour
 
     public virtual void standardMove()
     {
-        this.transform.Translate(scrollSpeed, 0, 0);
+        this.transform.Translate(scrollSpeed * (Time.deltaTime * 60), 0, 0);
     }
 
     public virtual bool destroyCondition()

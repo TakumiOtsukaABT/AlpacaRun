@@ -11,27 +11,31 @@ public class AlpacaController : MonoBehaviour
     Vector2 startPos;
     public float speed=1.0f;
     public float tackleTime = 2.0f, duckTime = 1.0f;
+    public bool disable = false;
     public ParticleSystem dustSlide;
     int state = 0;
     float seconds = 0;
     public GameObject shougeki;
+    Vector2 tempPos;
 
     Animator animator;
     void Start()
     {
+        Application.targetFrameRate = 30;
         this.rig = GetComponent<Rigidbody2D>();
         this.animator = GetComponent<Animator>();
         this.animator.SetBool("Ground", true);
+        disable = false;
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (Mathf.Approximately(Time.timeScale, 0f))
+        if (Mathf.Approximately(Time.timeScale, 0f)||disable)
         {
             return;
         }
-        this.animator.speed = speed;
+        this.animator.speed = speed * (Time.deltaTime * 60);
         if (Input.GetMouseButtonDown(0))
         {
             this.startPos = Input.mousePosition;
@@ -44,7 +48,10 @@ public class AlpacaController : MonoBehaviour
             {
                 case Direction.UP:
                     Debug.Log("UP");
-                    this.rig.AddForce(transform.up * this.force);
+                    if(rig.velocity.y == 0&&state==0)
+                    {
+                        this.rig.AddForce(transform.up * this.force);
+                    }
                     break;
                 case Direction.DOWN:
                     Debug.Log("DOWN");
@@ -60,6 +67,7 @@ public class AlpacaController : MonoBehaviour
                         GameObject go = Instantiate(shougeki) as GameObject;
                         go.transform.parent = this.transform;
                         go.transform.localPosition = new Vector3(-1.0f, 0, 0);
+                        tempPos = transform.position;
                         state = 2;
                     }
                     break;
