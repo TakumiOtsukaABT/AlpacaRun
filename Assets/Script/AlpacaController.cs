@@ -13,7 +13,7 @@ public class AlpacaController : MonoBehaviour
     public float tackleTime = 2.0f, duckTime = 1.0f;
     public bool disable = false;
     public ParticleSystem dustSlide;
-    int state = 0;
+    public int state = 0;
     float seconds = 0;
     public GameObject shougeki;
     Vector2 tempPos;
@@ -80,7 +80,8 @@ public class AlpacaController : MonoBehaviour
         switch (state)
         {
             case 0://walk or jump
-                if (rig.velocity.y != 0)
+               
+                if (transform.localPosition.y>-0.8)//important
                 {
                     this.animator.SetBool("Ground", false);
                 }
