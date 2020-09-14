@@ -19,6 +19,9 @@ public class AlpacaController : MonoBehaviour
     Vector2 tempPos;
     bool korobiBool = false;
 
+    public AudioClip jumpSound,DuckSound,fallSound,tackleSound;
+
+
     Animator animator;
     public float korobiTime;
     public float speedAdjust;
@@ -58,6 +61,7 @@ public class AlpacaController : MonoBehaviour
                         if (rig.velocity.y == 0 && state == 0)
                         {
                             this.rig.AddForce(transform.up * this.force);
+                            gameObject.GetComponent<AudioSource>().PlayOneShot(jumpSound);
                         }
                         break;
                     case Direction.DOWN:
@@ -65,6 +69,7 @@ public class AlpacaController : MonoBehaviour
                         if (state == 0 && rig.velocity.y == 0)
                         {
                             state = 1;
+                            gameObject.GetComponent<AudioSource>().PlayOneShot(DuckSound);
                         }
                         break;
                     case Direction.RIGHT:
