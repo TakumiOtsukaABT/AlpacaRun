@@ -7,6 +7,7 @@ public class AdManager : MonoBehaviour
     private string appStoreID = "3811512";
 
     private string interstitialAd = "video";
+    private string bannerAd = "Banner";
 
     public bool isTargetPlayStore;
     public bool isTestAd;

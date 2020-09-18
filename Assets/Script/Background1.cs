@@ -6,7 +6,7 @@ public class Background1 : MonoBehaviour
 {
     private float scrollSpeed;
     public Vector2 startPos;
-    const float imageBound = 22.455f;
+    public float imageBound = 22.455f;
     public float speedTimes = 3.9f;
     float newPos;
     /*scroll to alpaca no speed chousei*/

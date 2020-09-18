@@ -6,6 +6,7 @@ using UnityEngine.EventSystems;
 
 public class AlpacaController : MonoBehaviour
 {
+    public float yax = -0.8f;
     Rigidbody2D rig;
     public float force = 1000.0f;
     Vector2 startPos;
@@ -80,6 +81,7 @@ public class AlpacaController : MonoBehaviour
                             go.transform.parent = this.transform;
                             go.transform.localPosition = new Vector3(-1.0f, 0, 0);
                             tempPos = transform.position;
+                            gameObject.GetComponent<AudioSource>().PlayOneShot(tackleSound);
                             state = 2;
                         }
                         break;
@@ -93,7 +95,7 @@ public class AlpacaController : MonoBehaviour
         {
             case 0://walk or jump
                
-                if (transform.localPosition.y>-0.8)//important
+                if (transform.localPosition.y> yax)//important
                 {
                     this.animator.SetBool("Ground", false);
                 }

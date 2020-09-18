@@ -5,6 +5,7 @@ using UnityEngine;
 public class BreakableBox : Enemy
 {
     public ParticleSystem[] particle;
+    public AudioClip breakSound;
 
     public override bool destroyCondition()
     {
@@ -29,6 +30,7 @@ public class BreakableBox : Enemy
         }
         gameObject.GetComponent<BoxCollider2D>().enabled = false;
         gameObject.GetComponent<SpriteRenderer>().enabled = false;
+        gameObject.GetComponent<AudioSource>().PlayOneShot(breakSound);
         yield return new WaitForSeconds(particle[0].main.startLifetime.constantMax);
         Destroy(gameObject);
     }

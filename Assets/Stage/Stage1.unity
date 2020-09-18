@@ -984,6 +984,7 @@ GameObject:
   m_Component:
   - component: {fileID: 358330781}
   - component: {fileID: 358330780}
+  - component: {fileID: 358330782}
   m_Layer: 0
   m_Name: AdManager
   m_TagString: Untagged
@@ -998,13 +999,13 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 358330779}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 93632178a20a08044b8cb3e8e65d737a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   isTargetPlayStore: 1
-  isTestAd: 0
+  isTestAd: 1
 --- !u!4 &358330781
 Transform:
   m_ObjectHideFlags: 0
@@ -1019,6 +1020,20 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &358330782
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 358330779}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0e45af48d489fa347b4ea68ac1e695f0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isTargetPlayStore: 1
+  isTestAd: 1
 --- !u!4 &423273186 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1466421641211783559, guid: 757a53e263ffb484cb532b214fdb1141,
@@ -2740,8 +2755,13 @@ MonoBehaviour:
   order:
   - {fileID: 4326363520781243704, guid: 3a1577cb1bd867b40b0d54b1cd88752d, type: 3}
   - {fileID: 4326363520781243704, guid: 3a1577cb1bd867b40b0d54b1cd88752d, type: 3}
-  - {fileID: 5221860557411479924, guid: e9447367c637f784c8429f69a67dd0db, type: 3}
+  - {fileID: 5761995428198634518, guid: 7524cb6e7e664e24a98ffb51f7ba3f6c, type: 3}
   - {fileID: 4326363520781243704, guid: 3a1577cb1bd867b40b0d54b1cd88752d, type: 3}
+  - {fileID: 5761995428198634518, guid: 7524cb6e7e664e24a98ffb51f7ba3f6c, type: 3}
+  - {fileID: 5761995428198634518, guid: 7524cb6e7e664e24a98ffb51f7ba3f6c, type: 3}
+  - {fileID: 4326363520781243704, guid: 3a1577cb1bd867b40b0d54b1cd88752d, type: 3}
+  - {fileID: 5761995428198634518, guid: 7524cb6e7e664e24a98ffb51f7ba3f6c, type: 3}
+  - {fileID: 5221860557411479924, guid: e9447367c637f784c8429f69a67dd0db, type: 3}
   - {fileID: 5221860557411479924, guid: e9447367c637f784c8429f69a67dd0db, type: 3}
   interval:
   - 0
@@ -2749,6 +2769,11 @@ MonoBehaviour:
   - 6
   - 9
   - 12
+  - 15
+  - 18
+  - 21
+  - 24
+  - 27
   done: 0
 --- !u!4 &1653546214
 Transform:
