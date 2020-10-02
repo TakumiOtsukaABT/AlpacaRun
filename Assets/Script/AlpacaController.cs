@@ -26,6 +26,7 @@ public class AlpacaController : MonoBehaviour
     Animator animator;
     public float korobiTime;
     public float speedAdjust;
+    private bool blockGoingOver;
 
     void Start()
     {
@@ -159,6 +160,7 @@ public class AlpacaController : MonoBehaviour
 
     private void korobi()
     {
+        Debug.Log("korobing");
         this.transform.Translate((-this.speed / speedAdjust) * (Time.deltaTime * 60), 0, 0);
     }
 
@@ -170,6 +172,7 @@ public class AlpacaController : MonoBehaviour
             state = 0;
             seconds = 0;
         }
+        blockGoingOver = false;
     }
 
     enum Direction
@@ -198,14 +201,19 @@ public class AlpacaController : MonoBehaviour
         {
             dustSlide.Play();
         }
-        speed = Mathf.MoveTowards(speed, 3.0f, 0.5f);
-
+        if (!blockGoingOver)
+        {
+            speed = Mathf.MoveTowards(speed, 3.0f, 0.5f);
+        }
     }
 
     private void tackle()
     {
         Debug.Log("tackle");
-        speed = Mathf.MoveTowards(speed, 5.0f, 0.5f);
+        if (!blockGoingOver)
+        {
+            speed = Mathf.MoveTowards(speed, 5.0f, 0.5f);
+        }
     }
     private void tackleOnFinished()
     {
@@ -213,6 +221,7 @@ public class AlpacaController : MonoBehaviour
         speed = 1.0f;
         {
             state = 0;
+            blockGoingOver = false;
             seconds = 0;
         }
     }
@@ -228,9 +237,25 @@ public class AlpacaController : MonoBehaviour
             Debug.Log("cast success");
             if (rig.velocity.y <= 0)
             {
-                korobiBool = true;
+                if (this.state != 2 && this.state != 1)
+                {
+                    korobiBool = true;
+                }
             }
             
+        }
+    }
+
+    public void OnCollisionStay2D(Collision2D collision)
+    {
+        if (this.state == 2 || this.state==1)
+        {
+            if (collision.gameObject.GetComponent<Cat>() ||
+                collision.gameObject.GetComponent<Capibala>() ||
+                collision.gameObject.GetComponent<Rabbit>())
+            {
+                blockGoingOver = true;
+            }
         }
     }
 

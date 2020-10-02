@@ -374,7 +374,7 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: Stage2
+          m_StringArgument: Stage3
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &207438746
@@ -1220,11 +1220,11 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 879d0beef8d775e4c856720ff6d955b1, type: 3}
+  m_audioClip: {fileID: 8300000, guid: d8f7a78a964aa489aafb3749d805cd4b, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
-  Loop: 0
+  Loop: 1
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
@@ -1615,7 +1615,7 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: Stage1
+          m_StringArgument: Stage2
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &564222854
@@ -1760,7 +1760,7 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: Stage1
+          m_StringArgument: Stage2
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &639212292
@@ -2349,11 +2349,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cd44c1031e13a943bb63640046fad76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_UiScaleMode: 0
+  m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
   m_ReferenceResolution: {x: 800, y: 600}
-  m_ScreenMatchMode: 0
+  m_ScreenMatchMode: 1
   m_MatchWidthOrHeight: 0
   m_PhysicalUnit: 3
   m_FallbackScreenDPI: 96
@@ -2754,29 +2754,29 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   order:
-  - {fileID: 4326363520781243704, guid: 3a1577cb1bd867b40b0d54b1cd88752d, type: 3}
-  - {fileID: 4326363520781243704, guid: 3a1577cb1bd867b40b0d54b1cd88752d, type: 3}
-  - {fileID: 5761995428198634518, guid: 7524cb6e7e664e24a98ffb51f7ba3f6c, type: 3}
-  - {fileID: 4326363520781243704, guid: 3a1577cb1bd867b40b0d54b1cd88752d, type: 3}
-  - {fileID: 5761995428198634518, guid: 7524cb6e7e664e24a98ffb51f7ba3f6c, type: 3}
-  - {fileID: 5761995428198634518, guid: 7524cb6e7e664e24a98ffb51f7ba3f6c, type: 3}
-  - {fileID: 4326363520781243704, guid: 3a1577cb1bd867b40b0d54b1cd88752d, type: 3}
-  - {fileID: 5761995428198634518, guid: 7524cb6e7e664e24a98ffb51f7ba3f6c, type: 3}
+  - {fileID: 1198442079608731144, guid: 6156c41e9330cd749824bf7166a9576e, type: 3}
   - {fileID: 5221860557411479924, guid: e9447367c637f784c8429f69a67dd0db, type: 3}
+  - {fileID: 4326363520781243704, guid: 3a1577cb1bd867b40b0d54b1cd88752d, type: 3}
+  - {fileID: 4326363520781243704, guid: 3a1577cb1bd867b40b0d54b1cd88752d, type: 3}
+  - {fileID: 4326363520781243704, guid: 3a1577cb1bd867b40b0d54b1cd88752d, type: 3}
   - {fileID: 5221860557411479924, guid: e9447367c637f784c8429f69a67dd0db, type: 3}
+  - {fileID: 5761995428198634518, guid: 7524cb6e7e664e24a98ffb51f7ba3f6c, type: 3}
+  - {fileID: 5761995428198634518, guid: 7524cb6e7e664e24a98ffb51f7ba3f6c, type: 3}
+  - {fileID: 4326363520781243704, guid: 3a1577cb1bd867b40b0d54b1cd88752d, type: 3}
+  - {fileID: 4326363520781243704, guid: 3a1577cb1bd867b40b0d54b1cd88752d, type: 3}
   interval:
   - 0
-  - 3
-  - 6
+  - 4
+  - 7
   - 9
-  - 12
+  - 11
   - 15
   - 18
   - 21
   - 24
   - 27
   done: 0
-  yaxis: 0.6
+  yaxis: -0.5
 --- !u!4 &1653546214
 Transform:
   m_ObjectHideFlags: 0
@@ -3557,6 +3557,11 @@ PrefabInstance:
       propertyPath: fallSound
       value: 
       objectReference: {fileID: 8300000, guid: 7e26c9daf4c32483b9c2790e662d3f1b, type: 3}
+    - target: {fileID: 1466421641211783554, guid: 757a53e263ffb484cb532b214fdb1141,
+        type: 3}
+      propertyPath: yax
+      value: -1.8
+      objectReference: {fileID: 0}
     - target: {fileID: 1466421641211783556, guid: 757a53e263ffb484cb532b214fdb1141,
         type: 3}
       propertyPath: m_Name

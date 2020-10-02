@@ -7,16 +7,20 @@ public class Cat : Enemy
     public int state;
     public float sec;
     private float secTemp;
-    private float rand;
+    public float rand;
     private float temp;
     Animator animator;
+    public bool randomOn = true;
 
 
     new void Start()
     {
         base.Start();
         state = 0;
-        rand = Random.Range(0.2f, 1.5f);
+        if (randomOn)
+        {
+            rand = Random.Range(0.2f, 1.5f);
+        }
         temp = rand;
         animator = GetComponent<Animator>();
         secTemp = sec;

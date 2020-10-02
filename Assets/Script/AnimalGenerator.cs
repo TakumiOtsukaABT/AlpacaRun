@@ -12,7 +12,7 @@ public class AnimalGenerator : MonoBehaviour
 
     float a = 0.0f;
     int i = 0;
-    float time = 0.0f;
+    public float time = 0.0f;
     // Start is called before the first frame update
     void Start()
     {
@@ -36,7 +36,7 @@ public class AnimalGenerator : MonoBehaviour
             }catch(IndexOutOfRangeException)
             {
                 a += Time.deltaTime;
-                if (a > 3.0f)
+                if (a > 5.0f)
                 {
                     done = true;
                 }

@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 using UnityEngine.Advertisements;
 
 
@@ -44,6 +45,7 @@ public class GameDirector : MonoBehaviour
         {
             MyCanvas.SetActive("PauseButton", false);
             MyCanvas.SetActive("WinPanel", true);
+            PlayerPrefs.SetInt(SceneManager.GetActiveScene().name, 1);
         }
     }
 }

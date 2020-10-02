@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class GameSelectManager : MonoBehaviour
 {
-    private bool once;
+    private bool once = true;
     private void Start()
     {
         once = true;

@@ -11,13 +11,17 @@ public class Rabbit : Enemy
     public float countDown;
     bool startCount = false;
     float countFromSpawn;
+    public bool randomOn = true;
 
     new void Start()
     {
         base.Start();
         rig = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
-        interval = Random.Range(0.7f, 4.0f);
+        if (randomOn)
+        {
+            interval = Random.Range(0.7f, 4.0f);
+        }
         countDown = interval/10;
         animator.SetFloat("IdleSpeed", interval/10);
         countFromSpawn = 0;
