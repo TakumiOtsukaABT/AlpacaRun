@@ -124,6 +124,11 @@ public class AlpacaController : MonoBehaviour
                 if (seconds < tackleTime)
                 {
                     tackle();
+                    if (this.korobiBool)
+                    {
+                        tackleOnFinished();
+                        state = 3;
+                    }
                 }
                 else if (seconds > tackleTime)
                 {
@@ -238,6 +243,10 @@ public class AlpacaController : MonoBehaviour
             if (rig.velocity.y <= 0)
             {
                 if (this.state != 2 && this.state != 1)
+                {
+                    korobiBool = true;
+                }
+                if (this.state == 2 && collision.gameObject.GetComponent<Bird>())
                 {
                     korobiBool = true;
                 }
