@@ -2797,7 +2797,7 @@ MonoBehaviour:
   - 35.5
   done: 0
   yaxis: 0
-  time: 25
+  time: 0
 --- !u!4 &1653546214
 Transform:
   m_ObjectHideFlags: 0
