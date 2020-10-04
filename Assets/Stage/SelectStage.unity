@@ -1678,7 +1678,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 93632178a20a08044b8cb3e8e65d737a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isTargetPlayStore: 1
+  isTargetPlayStore: 0
   isTestAd: 1
 --- !u!4 &703998161
 Transform:
