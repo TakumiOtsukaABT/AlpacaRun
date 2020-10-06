@@ -10,5 +10,6 @@ public class PauseButton : MonoBehaviour
         gameObject.SetActive(false);
         Time.timeScale = 0;
         MyCanvas.SetActive("PauseMenu", true);
+        MyCanvas.SetActivebyTags("StartTag", false);
     }
 }

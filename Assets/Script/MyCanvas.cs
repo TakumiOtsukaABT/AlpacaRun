@@ -30,4 +30,19 @@ public class MyCanvas : MonoBehaviour
         // 指定したオブジェクト名が見つからなかった
         Debug.LogWarning("Not found objname:" + name);
     }
+    public static void SetActivebyTags(string name, bool b)
+    {
+        foreach (Transform child in _canvas.transform)
+        {
+            // 子の要素をたどる
+            if (child.tag == name)
+            {
+                // 指定した名前と一致
+                // 表示フラグを設定
+                child.gameObject.SetActive(b);
+            }
+        }
+        // おしまい
+        return;
+    }
 }
