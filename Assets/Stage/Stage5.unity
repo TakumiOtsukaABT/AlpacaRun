@@ -1005,7 +1005,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isTargetPlayStore: 1
-  isTestAd: 1
+  isTestAd: 0
 --- !u!4 &358330781
 Transform:
   m_ObjectHideFlags: 0
@@ -1033,7 +1033,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isTargetPlayStore: 1
-  isTestAd: 1
+  isTestAd: 0
 --- !u!4 &423273186 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1466421641211783559, guid: 757a53e263ffb484cb532b214fdb1141,
