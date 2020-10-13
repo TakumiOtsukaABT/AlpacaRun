@@ -38,7 +38,7 @@ public class AlpacaController : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
         if (Mathf.Approximately(Time.timeScale, 0f)||disable)
         {
