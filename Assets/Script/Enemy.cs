@@ -18,7 +18,7 @@ public class Enemy : MonoBehaviour
     }
 
     // Update is called once per frame
-    void FixedUpdate()
+    void Update()
     {
         if (Mathf.Approximately(Time.timeScale, 0f))
         {
