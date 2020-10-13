@@ -1004,7 +1004,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 93632178a20a08044b8cb3e8e65d737a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isTargetPlayStore: 1
+  isTargetPlayStore: 0
   isTestAd: 0
 --- !u!4 &358330781
 Transform:
@@ -1032,7 +1032,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0e45af48d489fa347b4ea68ac1e695f0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isTargetPlayStore: 1
+  isTargetPlayStore: 0
   isTestAd: 0
 --- !u!4 &423273186 stripped
 Transform:
@@ -2768,7 +2768,7 @@ MonoBehaviour:
   - {fileID: 4326363520781243704, guid: 3a1577cb1bd867b40b0d54b1cd88752d, type: 3}
   - {fileID: 4326363520781243704, guid: 3a1577cb1bd867b40b0d54b1cd88752d, type: 3}
   - {fileID: 5739696484605901143, guid: e8ef97171e8022145b43b7f090e2920b, type: 3}
-  - {fileID: 5221860557411479924, guid: e9447367c637f784c8429f69a67dd0db, type: 3}
+  - {fileID: 5739696484605901143, guid: e8ef97171e8022145b43b7f090e2920b, type: 3}
   - {fileID: 5761995428198634518, guid: 603032178f14ddc4d88632216e6f0ed6, type: 3}
   - {fileID: 5761995428198634518, guid: 603032178f14ddc4d88632216e6f0ed6, type: 3}
   - {fileID: 5761995428198634518, guid: 603032178f14ddc4d88632216e6f0ed6, type: 3}
