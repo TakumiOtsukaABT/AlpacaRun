@@ -85,6 +85,7 @@ public class AlpacaController : MonoBehaviour
                             go.transform.localPosition = new Vector3(-1.0f, 0, 0);
                             tempPos = transform.position;
                             gameObject.GetComponent<AudioSource>().PlayOneShot(tackleSound);
+                            afterTackle = gameObject.transform.position;
                             broken = false;
                             state = 2;
                         }
@@ -221,7 +222,7 @@ public class AlpacaController : MonoBehaviour
         if (!blockGoingOver)
         {
             speed = Mathf.MoveTowards(speed, 5.0f, 0.5f);
-            afterTackle = gameObject.transform.position;
+            Debug.Log("tttt" + afterTackle.x);
         }
     }
     private void tackleOnFinished()

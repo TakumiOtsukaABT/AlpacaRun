@@ -13,7 +13,7 @@ public class BreakableBox : Enemy
     }
     public void OnCollisionStay2D(Collision2D collision)
     {
-        if (collision.gameObject.GetComponent<Background1>())
+        if (!collision.gameObject.GetComponent<AlpacaController>())
         {
             return;
         }
