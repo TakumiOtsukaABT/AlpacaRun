@@ -16,6 +16,7 @@ public class AlpacaController : MonoBehaviour
     public ParticleSystem dustSlide;
     public int state = 0;
     float seconds = 0;
+    private Vector2 afterTackle;
     public GameObject shougeki;
     Vector2 tempPos;
     bool korobiBool = false;
@@ -27,6 +28,7 @@ public class AlpacaController : MonoBehaviour
     public float korobiTime;
     public float speedAdjust;
     private bool blockGoingOver;
+    public bool broken=false;
 
     void Start()
     {
@@ -83,6 +85,7 @@ public class AlpacaController : MonoBehaviour
                             go.transform.localPosition = new Vector3(-1.0f, 0, 0);
                             tempPos = transform.position;
                             gameObject.GetComponent<AudioSource>().PlayOneShot(tackleSound);
+                            broken = false;
                             state = 2;
                         }
                         break;
@@ -218,6 +221,7 @@ public class AlpacaController : MonoBehaviour
         if (!blockGoingOver)
         {
             speed = Mathf.MoveTowards(speed, 5.0f, 0.5f);
+            afterTackle = gameObject.transform.position;
         }
     }
     private void tackleOnFinished()
@@ -228,6 +232,10 @@ public class AlpacaController : MonoBehaviour
             state = 0;
             blockGoingOver = false;
             seconds = 0;
+        }
+        if (broken)
+        {
+            gameObject.transform.position = afterTackle;
         }
     }
 

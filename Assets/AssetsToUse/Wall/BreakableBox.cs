@@ -19,6 +19,7 @@ public class BreakableBox : Enemy
         }
         if (collision.gameObject.GetComponent<AlpacaController>().state==2)
         {
+            collision.gameObject.GetComponent<AlpacaController>().broken = true;
             StartCoroutine(Break());
         }
     }
